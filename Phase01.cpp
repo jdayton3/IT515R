@@ -56,7 +56,7 @@ int main() {
 		}
 		if (stable) {
 			cont = false;
-			std::cout << "It ran " << countReps << " times.\n\n";
+			std::cout << "\nIt ran " << countReps << " times.\n\n";
 		}
 	}
 
