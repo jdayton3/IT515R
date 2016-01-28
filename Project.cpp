@@ -15,8 +15,8 @@ int main() {
 	int countReps = 0;
 	bool cont = true;
 
-	for (int i = 0; i < VSIZE; i++) {
-		for (int j = 0; j < HSIZE; j++) {
+	for (unsigned int i = 0; i < VSIZE; i++) {
+		for (unsigned int j = 0; j < HSIZE; j++) {
 			if (i == 0 || i == HSIZE - 1 ||
 				j == 0 || j == VSIZE - 1) {
 				theArray[i][j] = 0;
@@ -31,15 +31,15 @@ int main() {
 
 	while (cont) {
 		++countReps;
-		for (int i = 1; i < VSIZE - 1; i++) {
-			for (int j = 1; j < HSIZE - 1; j++) {
+		for (unsigned int i = 1; i < VSIZE - 1; i++) {
+			for (unsigned int j = 1; j < HSIZE - 1; j++) {
 				tempArray.at(i).at(j) = (theArray.at(i - 1).at(j) + theArray.at(i + 1).at(j) + theArray.at(i).at(j - 1) + theArray.at(i).at(j + 1)) / 4.0f;
 			}
 		}
 		std::swap(tempArray, theArray);
 		bool stable = true;
-		for (int i = 1; i < VSIZE - 1; i++) {
-			for (int j = 1; j < HSIZE - 1; j++) {
+		for (unsigned int i = 1; i < VSIZE - 1; i++) {
+			for (unsigned int j = 1; j < HSIZE - 1; j++) {
 				bool s;
 				float threshold = 0.1;
 				float avg = (theArray.at(i - 1).at(j) + theArray.at(i + 1).at(j) + theArray.at(i).at(j - 1) + theArray.at(i).at(j + 1)) / 4.0f;
